@@ -1,0 +1,25 @@
+{
+  "build": {
+    "image": "node:18-alpine",
+    "command": "npm ci && npm run build",
+    "publicDir": "dist"
+  },
+  "site": {
+    "id": "chaleefi-website",
+    "team": "personal"
+  },
+  "preview": {
+    "commands": [
+      "npm ci",
+      "npm run build"
+    ]
+  },
+  "ipfs": {
+    "gateway": "https://ipfs.fleek.co",
+    "pinning": true
+  },
+  "ens": {
+    "domain": "chaleefi.eth",
+    "record": "content"
+  }
+}
