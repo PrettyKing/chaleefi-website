@@ -1,95 +1,183 @@
-# 🎭 chaleefi.eth - Web3 Pioneer's Personal Website
+# 👨‍💻 @chalee_x - 专业前端开发工程师个人网站
 
-> A modern, decentralized personal website showcasing Web3 expertise, NFT collections, and digital innovation.
+> 现代化的专业开发者个人网站，展示6年前端开发经验、Web3技术专长和项目作品集。
 
-![Website Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![IPFS](https://img.shields.io/badge/Hosted-IPFS-blue) ![ENS](https://img.shields.io/badge/Domain-ENS-purple)
+![Website Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/Built_with-React-blue) ![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue) ![Web3](https://img.shields.io/badge/Speciality-Web3-purple) ![Open to Work](https://img.shields.io/badge/Status-正在找工作-green)
 
-## 🌟 Features
+## 🌟 特色功能
 
-### ✨ Modern Web3 Design
-- **Cyberpunk + Japanese Aesthetic** - Unique visual identity
-- **Neon Color Palette** - Eye-catching gradient animations
-- **Responsive Design** - Perfect on all devices
-- **Smooth Animations** - Enhanced user experience
+### ✨ 专业设计
+- **现代化界面** - 渐变色彩与动画效果
+- **响应式设计** - 完美适配各种设备
+- **流畅动画** - 提升用户体验
+- **技能可视化** - 直观展示技术能力
 
-### 🎨 Content Sections
-- **Hero Section** - Personal branding with animated elements
-- **About Me** - Web3 journey timeline and achievements
-- **NFT Collection** - Interactive showcase of digital assets
-- **Project Portfolio** - DeFi, NFT, and development contributions
-- **Contact Hub** - Multi-platform communication options
+### 📋 内容模块
+- **个人介绍** - 6年开发经验展示
+- **技术栈** - React、Vue、Web3、全栈技能
+- **工作经历** - 时间线展示职业发展
+- **项目作品** - 核心项目详细介绍
+- **联系方式** - 多渠道沟通方式
 
-### 🛠 Technical Excellence
-- **React 18** - Modern component architecture
-- **Vite** - Lightning-fast build system
-- **Tailwind CSS** - Utility-first styling
-- **IPFS Ready** - Decentralized deployment
-- **ENS Integration** - Web3 native domain
+### 🛠 技术架构
+- **React 18** - 现代化组件架构
+- **Vite** - 快速构建工具
+- **Tailwind CSS** - 原子化CSS框架
+- **响应式布局** - 移动端友好
+- **性能优化** - 快速加载体验
 
-## 🚀 Live Website
+## 👨‍💻 关于开发者
 
-**Primary Access:**
-- 🌐 [chaleefi.eth](https://chaleefi.eth) (ENS-enabled browsers)
-- 🔗 [chaleefi.eth.link](https://chaleefi.eth.link) (Traditional browsers)
-- 📡 [chaleefi.eth.limo](https://chaleefi.eth.limo) (Alternative gateway)
+**@chalee_x (chaleeinhongkong@gmail.com)**
 
-## 🏗 Local Development
+- 🎯 **专业方向**: 前端开发、Web3、全栈开发
+- 📍 **工作地点**: 深圳
+- 💼 **求职状态**: 正在寻找新机会
+- 🎓 **教育背景**: 华南农业大学 机械设计制造及其自动化 本科
 
-### Prerequisites
+### 核心技能
+- **前端框架**: React、Vue、Next.js、Svelte
+- **编程语言**: TypeScript、JavaScript
+- **Web3技术**: Ethers.js、Wagmi、TypeChain、Solidity
+- **工程化**: Monorepo、CLI开发、微前端架构
+- **云服务**: AWS、阿里云、Vercel、Cloudflare
+
+### 工作经历
+1. **Aladdin AI Inc.** - Web3开发工程师 (2024.06 - 至今)
+2. **广州大事件科技** - Web前端开发 (2021.09 - 2024.03)
+3. **恩鼎专科门诊** - Web前端开发 (2020.10 - 2021.08)
+4. **广州利他网络科技** - Web前端开发 (2018.03 - 2020.09)
+
+## 🚀 本地开发
+
+### 环境要求
 - Node.js 18+ 
-- npm or yarn
+- npm 或 yarn
 - Git
 
-### Quick Start
+### 快速开始
 
 ```bash
-# Clone the repository
+# 克隆仓库
 git clone https://github.com/PrettyKing/chaleefi-website.git
 cd chaleefi-website
 
-# Install dependencies
+# 安装依赖
 npm install
 
-# Start development server
+# 启动开发服务器
 npm run dev
 
-# Build for production
+# 构建生产版本
 npm run build
 
-# Preview production build
+# 预览生产构建
 npm run preview
 ```
 
-## 🌐 Deployment
+### 项目结构
 
-### IPFS Deployment (Recommended)
+```
+chaleefi-website/
+├── src/
+│   ├── ChaleefiiWebsite.jsx  # 主组件
+│   ├── main.jsx              # 入口文件
+│   └── index.css             # 样式文件
+├── public/                   # 静态资源
+├── package.json              # 项目配置
+├── vite.config.js            # Vite 配置
+├── tailwind.config.js        # Tailwind 配置
+└── README.md                 # 项目说明
+```
 
-1. **Build the project:**
+## 🌐 部署方式
+
+### 自动化部署 (推荐)
+
+1. **Vercel 部署:**
+   ```bash
+   # 连接 GitHub 仓库到 Vercel
+   # 配置构建设置:
+   # - 构建命令: npm run build
+   # - 输出目录: dist
+   # - Git push 自动部署
+   ```
+
+2. **Netlify 部署:**
+   ```bash
+   # 构建项目
+   npm run build
+   
+   # 部署到 Netlify
+   # 上传 dist 目录或连接 Git 仓库
+   ```
+
+### 手动部署
+
+1. **构建项目:**
    ```bash
    npm run build
    ```
 
-2. **Deploy to IPFS via Fleek:**
-   - Connect GitHub repository to [Fleek](https://fleek.co)
-   - Configure build settings:
-     - Build Command: `npm run build`
-     - Publish Directory: `dist`
-   - Deploy automatically on Git push
+2. **部署静态文件:**
+   - 将 `dist` 目录上传到任何静态托管服务
+   - 如 GitHub Pages、Surge.sh 等
 
-3. **Update ENS Record:**
-   - Go to [ENS Manager](https://app.ens.domains)
-   - Set Content Record to IPFS hash
-   - Format: `ipfs://QmXxX...`
+## 📞 联系方式
 
-## 📞 Contact
+如果你对我的工作感兴趣或有合适的职位机会，欢迎通过以下方式联系：
 
-- **ENS:** chaleefi.eth
-- **Twitter:** [@chaleefi](https://twitter.com/chaleefi)
-- **Discord:** chaleefi#1337
-- **Email:** hello@chaleefi.eth
+- **邮箱:** chaleeinhongkong@gmail.com
+- **位置:** 深圳
+- **求职方向:** 前端开发、Web3开发、全栈开发
+
+## 🎯 求职意向
+
+**正在寻找以下类型的职位机会:**
+
+- 🚀 **前端开发工程师** - React/Vue 技术栈
+- 🔗 **Web3开发工程师** - 区块链应用开发
+- 💻 **全栈开发工程师** - 前后端一体化开发
+- 🏗️ **前端架构师** - 技术架构与团队建设
+
+**技术要求匹配:**
+- React/Vue 生态系统
+- TypeScript 开发
+- Web3/区块链技术
+- 微前端架构
+- 云原生部署
+
+## 🔧 技术栈详情
+
+### 前端技术
+- **框架**: React 18, Vue 3, Next.js, Nuxt.js
+- **语言**: TypeScript, JavaScript ES6+
+- **状态管理**: Redux, Vuex, Jotai, Zustand
+- **样式**: Tailwind CSS, Styled-components, SCSS
+- **构建工具**: Vite, Webpack, Rollup
+
+### Web3 技术
+- **以太坊**: Ethers.js, Web3.js, Wagmi
+- **钱包集成**: MetaMask, WalletConnect, Rainbowkit
+- **智能合约**: Solidity, TypeChain
+- **DeFi协议**: UniSwap, Compound 集成
+
+### 后端与工程化
+- **Node.js**: Express, NestJS, Koa
+- **数据库**: PostgreSQL, MongoDB, Redis
+- **微服务**: Docker, Kubernetes, Microservices
+- **CI/CD**: GitHub Actions, Jenkins, GitLab CI
+
+### 云服务与部署
+- **云平台**: AWS, 阿里云, Vercel, Cloudflare
+- **容器化**: Docker, Kubernetes
+- **监控**: Prometheus, Grafana
+- **CDN**: Cloudflare, AWS CloudFront
 
 ---
 
-**🌟 Built with ❤️ for the Web3 community**
+**🌟 用技术创造价值，用代码改变世界**
 
-*Explore the decentralized web at [chaleefi.eth](https://chaleefi.eth)*
+*如果你正在寻找一位有经验、有激情的前端开发工程师，请联系我！*
+
+📧 **chaleeinhongkong@gmail.com** | 📍 **深圳** | 💼 **正在找工作**
