@@ -1,25 +1,38 @@
 {
   "name": "chaleefi-website",
-  "version": "1.0.0",
-  "description": "chaleefi.eth - Web3 Pioneer's Personal Website",
+  "version": "2.0.0",
+  "description": "@chalee_x - Professional Frontend Developer Portfolio Website",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "keywords": [
+    "frontend-developer",
+    "react",
+    "vue",
     "web3",
-    "nft",
-    "defi",
-    "ens",
-    "personal-website",
-    "ipfs",
-    "decentralized"
+    "typescript",
+    "portfolio",
+    "resume",
+    "developer-website",
+    "professional",
+    "job-seeking"
   ],
-  "author": "chaleefi.eth",
+  "author": {
+    "name": "@chalee_x",
+    "email": "chaleeinhongkong@gmail.com",
+    "url": "https://github.com/PrettyKing"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PrettyKing/chaleefi-website.git"
+  },
+  "homepage": "https://prettyking.github.io/chaleefi-website",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
