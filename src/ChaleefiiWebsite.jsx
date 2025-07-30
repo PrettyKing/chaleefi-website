@@ -1,41 +1,104 @@
 import React, { useState, useEffect } from 'react';
 
 const ChaleefiiWebsite = () => {
-  const [nftData, setNftData] = useState([]);
+  const [currentSection, setCurrentSection] = useState('home');
   const [loading, setLoading] = useState(true);
 
-  // 模拟NFT数据获取
   useEffect(() => {
-    // 这里后续会连接OpenSea API
-    const mockData = [
-      {
-        name: "chaleefi.eth",
-        image: "/api/placeholder/300/300",
-        collection: "ENS: Ethereum Name Service",
-        price: "0.10 ETH"
-      }
-    ];
-    setTimeout(() => {
-      setNftData(mockData);
-      setLoading(false);
-    }, 1000);
+    setLoading(false);
   }, []);
 
+  const skills = [
+    { name: 'React', level: 95, category: '前端框架' },
+    { name: 'Vue', level: 90, category: '前端框架' },
+    { name: 'TypeScript', level: 90, category: '编程语言' },
+    { name: 'Next.js', level: 85, category: '前端框架' },
+    { name: 'Web3/Ethers', level: 85, category: 'Web3' },
+    { name: 'Node.js', level: 80, category: '后端' },
+    { name: 'Tailwind CSS', level: 90, category: '样式' },
+    { name: 'AWS/阿里云', level: 75, category: '云服务' }
+  ];
+
+  const experiences = [
+    {
+      company: 'Aladdin AI Inc.',
+      position: 'Web3开发工程师',
+      period: '2024.06 - 至今',
+      type: '远程',
+      description: '参与Aladdin区块链项目的核心架构设计与开发，负责智能代理(Agent)的雇佣管理机制、任务(Job)创建与智能分配系统，以及基于智能合约的质押功能模块。',
+      tech: ['Next.js', 'TypeScript', 'Ethers.js', 'Wagmi', 'TypeChain', 'NestJS']
+    },
+    {
+      company: '广州大事件科技有限公司',
+      position: 'Web前端开发',
+      period: '2021.09 - 2024.03',
+      type: '云事业部',
+      description: '负责公司前端业务开发，深度参与内部OA系统开发，具备全栈开发能力。主导制定前端开发规范，参与微服务项目基础架构搭建。',
+      tech: ['Vue3', 'React', 'QiankunJS', 'TaroJS', 'ElementUI', 'MidwayJS']
+    },
+    {
+      company: '恩鼎专科门诊',
+      position: 'Web前端开发',
+      period: '2020.10 - 2021.08',
+      type: '网络部',
+      description: '主导开发公司挂号系统的H5页面和微信小程序，负责前端业务逻辑实现与技术框架搭建。',
+      tech: ['Vue', '微信小程序', 'H5开发']
+    },
+    {
+      company: '广州利他网络科技有限公司',
+      position: 'Web前端开发',
+      period: '2018.03 - 2020.09',
+      type: '技术部',
+      description: '主导开发K12教育平台的课程管理系统，负责设计并实现H5和微信小程序端的课程播放、用户评论等核心功能模块。',
+      tech: ['Vue', '微信小程序', 'H5开发', '直播SDK集成']
+    }
+  ];
+
+  const projects = [
+    {
+      name: 'Aladdin Web3平台',
+      description: '综合性DeFi平台，集成数字资产管理、智能代理服务和DAO治理',
+      tech: ['Next.js', 'TypeScript', 'Ethers.js', 'Wagmi', 'TailwindCSS', 'NestJS'],
+      highlights: ['多钱包管理系统', '智能合约交互', '数据可视化界面'],
+      status: '进行中'
+    },
+    {
+      name: '贪吃商城',
+      description: '覆盖全国本地生活服务的综合性平台，商家优惠券和活动管理系统',
+      tech: ['TaroJS', 'Vue3', 'QiankunJS', 'ElementUI', 'Webpack'],
+      highlights: ['微前端架构', '多端统一开发', '性能优化'],
+      status: '已完成'
+    },
+    {
+      name: '大事件OA小助手',
+      description: '内部OA管理系统，实现多部门协同办公的数字化转型',
+      tech: ['QiankunJS', 'Vue', 'React', 'MidwayJS', 'Kubernetes'],
+      highlights: ['微服务架构', 'CI/CD自动化', '容器化部署'],
+      status: '已完成'
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 text-white">
       {/* 导航栏 */}
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              chaleefi.eth
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              @chalee_x
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#home" className="hover:text-blue-400 transition-colors">首页</a>
               <a href="#about" className="hover:text-blue-400 transition-colors">关于</a>
-              <a href="#nfts" className="hover:text-blue-400 transition-colors">NFT收藏</a>
+              <a href="#skills" className="hover:text-blue-400 transition-colors">技能</a>
+              <a href="#experience" className="hover:text-blue-400 transition-colors">经历</a>
               <a href="#projects" className="hover:text-blue-400 transition-colors">项目</a>
               <a href="#contact" className="hover:text-blue-400 transition-colors">联系</a>
+            </div>
+            <div className="flex items-center space-x-4">
+              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm border border-green-500/30">
+                正在找工作
+              </span>
             </div>
           </div>
         </div>
@@ -43,194 +106,313 @@ const ChaleefiiWebsite = () => {
 
       {/* Hero Section */}
       <section id="home" className="pt-32 pb-20 relative overflow-hidden">
-        {/* 动态背景元素 */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-32 h-32 border border-blue-400/30 rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 border border-purple-400/30 rounded-full animate-ping delay-1000"></div>
-          <div className="absolute bottom-40 left-1/4 w-16 h-16 border border-pink-400/30 rounded-full animate-bounce delay-500"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 border border-cyan-400/30 rounded-full animate-ping delay-1000"></div>
+          <div className="absolute bottom-40 left-1/4 w-16 h-16 border border-green-400/30 rounded-full animate-bounce delay-500"></div>
         </div>
 
         <div className="container mx-auto px-6 text-center relative z-10">
-          {/* 主头像区域 */}
           <div className="relative inline-block mb-8">
-            <div className="w-48 h-48 rounded-full bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-1 mx-auto animate-pulse">
-              <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center relative overflow-hidden">
-                {/* 日式面具风格头像 */}
-                <div className="text-6xl relative z-10">🎭</div>
-                {/* 霓虹光效 */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full"></div>
+            <div className="w-48 h-48 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-green-500 p-1 mx-auto">
+              <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center relative overflow-hidden">
+                <div className="text-6xl">👨‍💻</div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full"></div>
               </div>
             </div>
-            {/* 在线状态指示器 */}
             <div className="absolute -bottom-3 -right-3 bg-gradient-to-r from-green-400 to-cyan-400 w-12 h-12 rounded-full flex items-center justify-center animate-pulse shadow-lg shadow-green-400/50">
               <span className="text-lg">⚡</span>
             </div>
-            {/* ENS验证徽章 */}
-            <div className="absolute -top-2 -left-2 bg-gradient-to-r from-blue-500 to-purple-500 w-10 h-10 rounded-full flex items-center justify-center shadow-lg shadow-blue-400/50">
-              <span className="text-sm">✓</span>
-            </div>
           </div>
           
-          {/* 主标题 */}
-          <h1 className="text-7xl md:text-8xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
-            chaleefi.eth
+          <h1 className="text-6xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
+            @chalee_x
           </h1>
           
-          {/* 副标题 */}
           <div className="text-2xl text-gray-300 mb-4 font-light">
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Web3 Pioneer</span> | 
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> NFT Curator</span> | 
-            <span className="bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent"> Digital Nomad</span>
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">前端开发</span> | 
+            <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent"> Web3</span> | 
+            <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent"> 全栈开发</span>
           </div>
           
-          {/* 个人简介 */}
           <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-            探索去中心化世界的无限可能，发现下一个改变世界的Web3项目。
-            在数字艺术的海洋中寻找珍宝，用代码和创意构建未来。
+            6年前端开发经验，专注于现代化Web应用开发和Web3技术。
+            熟悉React、Vue生态，具备全栈开发能力，致力于构建高质量的用户体验。
           </p>
           
-          {/* 行动按钮 */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-            <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25">
+            <a href="#contact" className="group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25">
               <span className="flex items-center justify-center gap-2">
-                探索我的世界 
+                联系我 
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </span>
-            </button>
-            <button className="group border-2 border-cyan-400 hover:bg-cyan-400/10 px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
-              <span className="flex items-center justify-center gap-2">
-                🔗 连接钱包
-                <span className="group-hover:animate-spin">⚡</span>
-              </span>
-            </button>
+            </a>
+            <a href="#projects" className="group border-2 border-cyan-400 hover:bg-cyan-400/10 px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
+              查看项目
+            </a>
           </div>
 
-          {/* 增强版统计数据 */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-400/20 hover:border-blue-400/40 transition-all duration-300 backdrop-blur-sm">
               <div className="text-4xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-                15
+                6+
               </div>
-              <div className="text-gray-400 font-medium">NFT 收藏</div>
-              <div className="text-xs text-blue-400 mt-1">+3 本月</div>
+              <div className="text-gray-400 font-medium">年开发经验</div>
             </div>
-            <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-400/20 hover:border-purple-400/40 transition-all duration-300 backdrop-blur-sm">
-              <div className="text-4xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-                8
+            <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-green-500/10 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 backdrop-blur-sm">
+              <div className="text-4xl font-black bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
+                10+
               </div>
-              <div className="text-gray-400 font-medium">Web3 项目</div>
-              <div className="text-xs text-purple-400 mt-1">活跃参与</div>
+              <div className="text-gray-400 font-medium">完成项目</div>
             </div>
-            <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-pink-500/10 to-red-500/10 border border-pink-400/20 hover:border-pink-400/40 transition-all duration-300 backdrop-blur-sm">
-              <div className="text-4xl font-black bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-                3.2K
+            <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-green-400/20 hover:border-green-400/40 transition-all duration-300 backdrop-blur-sm">
+              <div className="text-4xl font-black bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
+                4
               </div>
-              <div className="text-gray-400 font-medium">社区关注</div>
-              <div className="text-xs text-pink-400 mt-1">持续增长</div>
+              <div className="text-gray-400 font-medium">公司经历</div>
             </div>
-            <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-cyan-500/10 border border-green-400/20 hover:border-green-400/40 transition-all duration-300 backdrop-blur-sm">
-              <div className="text-4xl font-black bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-                1
+            <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-400/20 hover:border-blue-400/40 transition-all duration-300 backdrop-blur-sm">
+              <div className="text-4xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
+                Web3
               </div>
-              <div className="text-gray-400 font-medium">ENS 域名</div>
-              <div className="text-xs text-green-400 mt-1">已认证</div>
+              <div className="text-gray-400 font-medium">技术专长</div>
             </div>
-          </div>
-
-          {/* 滚动提示 */}
-          <div className="mt-16 animate-bounce">
-            <div className="text-gray-500 text-sm mb-2">向下探索更多</div>
-            <div className="text-2xl">↓</div>
           </div>
         </div>
       </section>
 
-      {/* 简化版的其他sections */}
+      {/* About Section */}
       <section id="about" className="py-20 bg-black/20">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             关于我
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            作为Web3领域的早期探索者，我致力于发现和参与最具创新性的去中心化项目。
-            从NFT收藏到DeFi协议，从社区建设到技术开发，我在Web3生态系统中留下了自己的足迹。
-          </p>
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div>
+              <h3 className="text-2xl font-bold mb-6 text-cyan-400">专业背景</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                拥有6年前端开发经验，从传统Web开发到现代化Web3应用，见证并参与了前端技术的快速发展。
+                在多家公司担任核心开发角色，具备从需求分析到产品上线的全流程开发经验。
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                目前专注于Web3技术栈，参与区块链项目开发，熟悉智能合约交互、DeFi协议集成等前沿技术。
+                同时具备全栈开发能力，能够独立完成从前端到后端的完整项目开发。
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-6 text-cyan-400">技术理念</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-400 mt-1">▶</span>
+                  <div>
+                    <span className="text-white font-semibold">工程化优先：</span>
+                    <span className="text-gray-300">推动团队工程化落地，提升开发效率和代码质量</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-400 mt-1">▶</span>
+                  <div>
+                    <span className="text-white font-semibold">架构思考：</span>
+                    <span className="text-gray-300">结合函数式编程与SOLID原则进行系统设计</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-400 mt-1">▶</span>
+                  <div>
+                    <span className="text-white font-semibold">性能优化：</span>
+                    <span className="text-gray-300">关注用户体验，持续优化应用性能和加载速度</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-400 mt-1">▶</span>
+                  <div>
+                    <span className="text-white font-semibold">技术创新：</span>
+                    <span className="text-gray-300">探索AI提效工具，实现开发流程自动化</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="nfts" className="py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            NFT 收藏
+      {/* Skills Section */}
+      <section id="skills" className="py-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
+            技术栈
           </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            精心策划的数字艺术收藏，每一件都代表着Web3文化的独特片段。
-          </p>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl p-6 border border-white/10 hover:border-purple-400/40 transition-all duration-300">
-                <div className="w-full h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl mb-4 flex items-center justify-center">
-                  <span className="text-4xl">🎨</span>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {skills.map((skill, index) => (
+                <div key={index} className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-xl p-6 border border-gray-600/30">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-white font-semibold">{skill.name}</span>
+                    <span className="text-cyan-400 text-sm">{skill.category}</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div 
+                      className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full transition-all duration-1000"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                  <div className="text-right text-sm text-gray-400 mt-1">{skill.level}%</div>
                 </div>
-                <h3 className="text-lg font-bold mb-2">收藏品 #{item}</h3>
-                <p className="text-gray-400 text-sm">独特的数字艺术作品</p>
+              ))}
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center p-6 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl border border-blue-400/20">
+                <div className="text-4xl mb-4">⚛️</div>
+                <h3 className="text-xl font-bold mb-2 text-blue-400">前端框架</h3>
+                <p className="text-gray-300 text-sm">React、Vue、Svelte、Solid</p>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-cyan-500/10 to-green-500/10 rounded-xl border border-cyan-400/20">
+                <div className="text-4xl mb-4">🔗</div>
+                <h3 className="text-xl font-bold mb-2 text-cyan-400">Web3技术</h3>
+                <p className="text-gray-300 text-sm">Ethers、Wagmi、TypeChain、Solidity</p>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-xl border border-green-400/20">
+                <div className="text-4xl mb-4">☁️</div>
+                <h3 className="text-xl font-bold mb-2 text-green-400">云服务</h3>
+                <p className="text-gray-300 text-sm">AWS、阿里云、Vercel、Cloudflare</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-20 bg-black/20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+            工作经历
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative mb-8 last:mb-0">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0 w-4 h-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mt-6 relative z-10">
+                    {index < experiences.length - 1 && (
+                      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-px h-24 bg-gradient-to-b from-cyan-500 to-green-500"></div>
+                    )}
+                  </div>
+                  <div className="flex-grow bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-xl p-6 border border-gray-600/30">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{exp.position}</h3>
+                        <p className="text-cyan-400">{exp.company} · {exp.type}</p>
+                      </div>
+                      <span className="text-green-400 text-sm bg-green-500/10 px-3 py-1 rounded-full border border-green-500/30 mt-2 md:mt-0 self-start">
+                        {exp.period}
+                      </span>
+                    </div>
+                    <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.tech.map((tech, techIndex) => (
+                        <span key={techIndex} className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm border border-blue-500/30">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="projects" className="py-20 bg-black/20">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
+      {/* Projects Section */}
+      <section id="projects" className="py-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
             项目展示
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl p-8 border border-blue-400/20">
-              <div className="text-4xl mb-4">🌊</div>
-              <h3 className="text-xl font-bold mb-4">OpenSea 活跃交易者</h3>
-              <p className="text-gray-300">在全球最大的NFT市场上积极参与交易和收藏。</p>
-            </div>
-            <div className="bg-gradient-to-br from-green-500/10 to-cyan-500/10 rounded-2xl p-8 border border-green-400/20">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-bold mb-4">ENS 早期采用者</h3>
-              <p className="text-gray-300">拥有chaleefi.eth域名，建立Web3数字身份。</p>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {projects.map((project, index) => (
+              <div key={index} className="bg-gradient-to-br from-gray-800/50 to-gray-700/50 rounded-xl overflow-hidden border border-gray-600/30 hover:border-cyan-400/50 transition-all duration-300 group">
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                      {project.name}
+                    </h3>
+                    <span className={`px-2 py-1 rounded-full text-xs ${
+                      project.status === '进行中' 
+                        ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                        : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                    }`}>
+                      {project.status}
+                    </span>
+                  </div>
+                  <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-cyan-400 mb-2">核心亮点</h4>
+                    <ul className="space-y-1">
+                      {project.highlights.map((highlight, hIndex) => (
+                        <li key={hIndex} className="text-gray-400 text-sm flex items-center gap-2">
+                          <span className="text-green-400">•</span>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span key={techIndex} className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs border border-gray-600/50">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="py-20">
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-black/20">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
             联系我
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            我正在寻找新的职业机会，如果你有合适的前端开发、Web3或全栈开发职位，欢迎联系我！
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
             <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl p-6 border border-blue-400/20">
-              <div className="text-3xl mb-4">🐦</div>
-              <h3 className="text-lg font-bold mb-2">Twitter</h3>
-              <p className="text-gray-400">@chaleefi</p>
+              <div className="text-3xl mb-4">📧</div>
+              <h3 className="text-lg font-bold mb-2">邮箱</h3>
+              <p className="text-gray-400">chaleeinhongkong@gmail.com</p>
             </div>
-            <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-2xl p-6 border border-purple-400/20">
-              <div className="text-3xl mb-4">💬</div>
-              <h3 className="text-lg font-bold mb-2">Discord</h3>
-              <p className="text-gray-400">chaleefi#1337</p>
+            <div className="bg-gradient-to-br from-cyan-500/10 to-green-500/10 rounded-2xl p-6 border border-cyan-400/20">
+              <div className="text-3xl mb-4">📍</div>
+              <h3 className="text-lg font-bold mb-2">位置</h3>
+              <p className="text-gray-400">深圳</p>
             </div>
-            <div className="bg-gradient-to-br from-green-500/10 to-cyan-500/10 rounded-2xl p-6 border border-green-400/20">
-              <div className="text-3xl mb-4">⚡</div>
-              <h3 className="text-lg font-bold mb-2">ENS</h3>
-              <p className="text-gray-400">chaleefi.eth</p>
+            <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-2xl p-6 border border-green-400/20">
+              <div className="text-3xl mb-4">💼</div>
+              <h3 className="text-lg font-bold mb-2">求职意向</h3>
+              <p className="text-gray-400">前端开发、Web3、全栈开发</p>
             </div>
           </div>
           
-          <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl p-8 border border-cyan-400/20 max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold mb-4">发送 ETH 或 NFT</h3>
-            <div className="bg-gray-800/80 rounded-lg p-4 font-mono text-center border border-cyan-400/30">
-              <div className="text-xl font-bold text-white">chaleefi.eth</div>
+          <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-2xl p-8 border border-blue-400/20 max-w-2xl mx-auto">
+            <h3 className="text-xl font-bold mb-4">教育背景</h3>
+            <div className="space-y-4">
+              <div className="text-left">
+                <div className="font-semibold text-white">华南农业大学</div>
+                <div className="text-cyan-400">机械设计制造及其自动化 本科</div>
+                <div className="text-gray-400 text-sm">2019.03 - 2021.12</div>
+              </div>
+              <div className="text-left">
+                <div className="font-semibold text-white">华南农业大学</div>
+                <div className="text-cyan-400">计算机网络技术 大专</div>
+                <div className="text-gray-400 text-sm">2016.03 - 2018.12</div>
+              </div>
             </div>
-            <p className="text-gray-400 text-sm mt-4">
-              支持所有主流代币和NFT转账
-            </p>
           </div>
         </div>
       </section>
@@ -238,21 +420,21 @@ const ChaleefiiWebsite = () => {
       {/* 页脚 */}
       <footer className="py-12 bg-black/40 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
-          <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
-            chaleefi.eth
+          <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+            @chalee_x
           </div>
           <p className="text-gray-400 mb-4">
-            © 2025 chaleefi.eth. 运行在IPFS上的去中心化网站
+            © 2025 chaleeinhongkong@gmail.com. 专业前端开发工程师
           </p>
           <div className="flex justify-center items-center gap-4 text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span>网站状态: 在线</span>
+              <span>开放工作机会</span>
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-              <span>🌐</span>
-              <span>IPFS托管</span>
+              <span>🚀</span>
+              <span>React + Web3 专家</span>
             </div>
           </div>
         </div>
