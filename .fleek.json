@@ -2,11 +2,15 @@
   "build": {
     "image": "node:18-alpine",
     "command": "npm ci && npm run build",
-    "publicDir": "dist"
+    "publicDir": "dist",
+    "environment": {
+      "NODE_VERSION": "18"
+    }
   },
   "site": {
-    "id": "chaleefi-website",
-    "team": "personal"
+    "id": "chalee-developer-portfolio",
+    "team": "personal",
+    "name": "@chalee_x Developer Portfolio"
   },
   "preview": {
     "commands": [
@@ -18,8 +22,10 @@
     "gateway": "https://ipfs.fleek.co",
     "pinning": true
   },
-  "ens": {
-    "domain": "chaleefi.eth",
-    "record": "content"
+  "hosting": {
+    "IPFS": true,
+    "domains": [
+      "chalee-dev.on.fleek.co"
+    ]
   }
 }
