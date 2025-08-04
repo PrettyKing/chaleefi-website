@@ -85,3 +85,4 @@ ipfs-hash.txt
 # Production deployment
 vercel.json
 netlify.toml
+.vercel
