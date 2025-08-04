@@ -1,0 +1,8 @@
+# SPA 路由重定向
+/*    /index.html   200
+
+# 强制 HTTPS
+http://chalee-developer-portfolio.pages.dev/*  https://chalee-developer-portfolio.pages.dev/:splat  301
+
+# 缓存静态资源
+/assets/*  200  Cache-Control: public, max-age=31536000, immutable
