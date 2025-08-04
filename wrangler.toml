@@ -1,0 +1,23 @@
+name = "chalee-developer-portfolio"
+compatibility_date = "2023-12-01"
+
+[env.production]
+name = "chalee-developer-portfolio"
+
+[env.preview]
+name = "chalee-developer-portfolio-preview"
+
+# Pages 配置
+[pages]
+build_command = "npm run build"
+destination_dir = "dist"
+source_dir = "."
+
+# 环境变量
+[vars]
+NODE_VERSION = "18"
+
+# 自定义域名配置 (可选)
+# [routes]
+# pattern = "chalee-dev.com"
+# custom_domain = true
