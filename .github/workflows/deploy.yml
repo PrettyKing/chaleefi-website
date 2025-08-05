@@ -1,35 +1,22 @@
-name: Deploy to GitHub Pages
-
+name: Publish And Deploy MyWebSite # 自动部署的名称
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    tags: # 当我们提交代码为tag 是以'v'开头的时候才会触发自动部署到服务端 如 git push tag v0.1.0
+      - 'v*'
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
-        
-    - name: Install dependencies
-      run: npm ci
-      
-    - name: Build
-      run: npm run build
-      
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-        cname: chaleefi.eth  # 自定义域名（可选）
+  build:
+    runs-on: ubuntu-latest # 运行环境，告诉它运行在什么环境
+    steps: 
+      - uses: actions/checkout@master
+      - name: Git stuff
+        run: |
+          npm install
+          npm run build:travis
+          cd ./build
+          git init
+          git config user.name "chalee"
+          git config user.email "chalee695469701@gmail.com"
+          git add .
+          git commit -m "Action Builder at $(date +'%Y-%m-%d %H:%M:%S')"
+          git push --force --quiet "https://PrettyKing:${{secrets.ACCESS_TOKEN}}@github.com/PrettyKing/my-website.git" master:online
