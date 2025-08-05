@@ -12,11 +12,11 @@ jobs:
       - name: Git stuff
         run: |
           npm install
-          npm run build:travis
+          npm run build
           cd ./build
           git init
           git config user.name "chalee"
-          git config user.email "chalee695469701@gmail.com"
+          git config user.email "chaleeinhongkong@gmail.com"
           git add .
           git commit -m "Action Builder at $(date +'%Y-%m-%d %H:%M:%S')"
           git push --force --quiet "https://PrettyKing:${{secrets.ACCESS_TOKEN}}@github.com/PrettyKing/my-website.git" master:online
