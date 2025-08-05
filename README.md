@@ -5,8 +5,9 @@
 ![Website Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/Built_with-React-blue) ![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue) ![Web3](https://img.shields.io/badge/Speciality-Web3-purple) ![Open to Work](https://img.shields.io/badge/Status-正在找工作-green)
 
 ## 预览
-[vercel](https://chaleefi-website-2x5otf9o5-chalees-projects.vercel.app/)
-[cloudflare](https://chalee-developer-portfolio.pages.dev/)
+- [vercel](https://chaleefi-website-2x5otf9o5-chalees-projects.vercel.app/)
+- [cloudflare](https://chalee-developer-portfolio.pages.dev/)
+- [github](https://prettyking.github.io/chaleefi-website/)
 
 ## 🌟 特色功能
 
