@@ -7,6 +7,7 @@
 ## 预览
 [vercel](https://chaleefi-website-2x5otf9o5-chalees-projects.vercel.app/)
 [cloudflare](https://chalee-developer-portfolio.pages.dev/)
+[github](https://faithcal.com)
 
 ## 🌟 特色功能
 
