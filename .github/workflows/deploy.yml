@@ -13,7 +13,7 @@ jobs:
         run: |
           npm install
           npm run build
-          cd ./build
+          cd ./dist
           git init
           git config user.name "chalee"
           git config user.email "chaleeinhongkong@gmail.com"
